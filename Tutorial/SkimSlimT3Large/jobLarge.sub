@@ -1,0 +1,11 @@
+Jobs = 10
+getenv         = False
+executable     = SkimSlimLarge.sh 
+output         = SkimSlimLarge.out.$(Process)
+error          = SkimSlimLarge.error.$(Process)
+log            = SkimSlimLarge.log.$(Process)
+arguments = $(Process) $(Jobs)
+transfer_input_files = filter-and-merge-d3pd.py,/tmp/x509up_u20074,inputFileListLarge,branchesList,cutCode
+universe       = vanilla
+Requirements   = HAS_CVMFS =?= True 
+queue $(Jobs)
