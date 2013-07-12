@@ -195,8 +195,8 @@ int main(int argc, char **argv){
         //TTreeCache::SetLearnEntries(1);
     TTreePerfStats *ps= new TTreePerfStats("ioperf",tree);
 
- //   TFile *cFile = new TFile(ofn.c_str(),"recreate");
-    TFile *cFile = new TFile("out.root","recreate");
+    TFile *cFile = (TFile*) TFile::Open(ofn.c_str(),"new");
+ //   TFile *cFile = new TFile("out.root","recreate");
     TTree *cTree = (TTree*)tree->CloneTree(0);
 
     for (int i=0;i<nentries;i++) {
