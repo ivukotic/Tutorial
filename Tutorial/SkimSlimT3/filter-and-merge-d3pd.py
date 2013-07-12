@@ -340,6 +340,7 @@ def merge_all_trees(fnames, tree_name, memory, sfo,
         for i in xrange(nentries):
 
             nb = tree.GetEntry(i)
+            if not i%100: print 'event:', i
             if nb <= 0:
                 print "*** error loading entry [%i]. got (%i) bytes" % (i,nb)
                 raise RuntimeError
