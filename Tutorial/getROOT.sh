@@ -1,3 +1,4 @@
+##############  getROOT.sh #################
 #!/bin/bash
 A=$PWD
 echo "Setting up gcc"
