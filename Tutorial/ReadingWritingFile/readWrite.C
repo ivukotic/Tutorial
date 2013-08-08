@@ -117,7 +117,7 @@ int main(int argc, char **argv){
     string fn               = argv[1];
     string ofn              = argv[2];
     string trname           = argv[3];
-    int percentage               = atoi(argv[4]);
+    int percentage               = atof(argv[4]);
     float TTC                    = atof(argv[5]);
     string branchesToBeRead;
     if (argc==7) branchesToBeRead = argv[6]; 
@@ -200,7 +200,7 @@ int main(int argc, char **argv){
     TTree *cTree = (TTree*)tree->CloneTree(0);
 
     for (int i=0;i<nentries;i++) {
-        if (gRandom->Rndm(1)<((float) percentage/100)) {
+        if (gRandom->Rndm(1)<( percentage/100)) {
             randoms[i]=1;
         } else randoms[i]=0;
     }

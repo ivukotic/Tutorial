@@ -116,8 +116,8 @@ int main(int argc, char **argv){
     }
     string fn               = argv[1];
     string trname           = argv[2];
-    int percentage               = atoi(argv[3]);
-    float TTC                    = atof(argv[4]);
+    float percentage        = atof(argv[3]);
+    float TTC               = atof(argv[4]);
     string branchesToBeRead;
     if (argc==6) branchesToBeRead = argv[5]; 
 
@@ -198,7 +198,7 @@ int main(int argc, char **argv){
     TTreePerfStats *ps= new TTreePerfStats("ioperf",tree);
 
     for (int i=0;i<nentries;i++) {
-        if (gRandom->Rndm(1)<((float) percentage/100)) {
+        if (gRandom->Rndm(1)<(percentage/100)) {
             randoms[i]=1;
         } else randoms[i]=0;
     }
